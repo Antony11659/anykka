@@ -78,26 +78,24 @@ A word should have:
 ##### StartLearning
 This is one section of App logic that is responsible for preparing the text and learning words after that.
 
-View:
-    1.0 /start: shows the page with existing texts (if exist) and New Text
-        1.1 /learn:
-            - starts learning chosen words (learnText)
-        1.2 /new:
-            - creates new text 
-        1.3 /prepare:
-            - starts preparing the text (prepareText)
-            - after success goes into "/start"
+View:  
+    1.0 /start: shows the page with existing texts (if exist) and New Text  
+        1.1 /learn:  
+            - starts learning chosen words(learnText)  
+        1.2 /new:  
+            - creates new text   
+        1.3 /prepare:  
+            - starts preparing the text (prepareText)  
+            - after success goes into "/start"  
 
-Functions logic:
-    1.0 prepareText
-        1.1 split the text into uniq words and save each one into DB
-        1.2 save text as well
-    2.0 learnText
-        2.1 split text into sentences 
-        2.2 select words from DB and choose a sentence with the selected word:
-            SelectWord (subsection of StartLearning)
-                This subsection is responsible for:
-                 - select the word
-                 - change info about this word based on users answers
-
-    - save words with updated data
+Functions logic:  
+    1.0 prepareText  
+        1.1 split the text into uniq words and save each one into DB  
+        1.2 save text as well  
+    2.0 learnText  
+        2.1 split text into sentences  
+        2.2 SelectWord ( select words from DB and choose a sentence with the selected word )  
+            - select the word  
+            - change info about this word based on users answers  
+            
+    -save words with updated data
