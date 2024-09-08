@@ -1,0 +1,4 @@
+TO DO from (08.08.24)
+- save the text to the DB 
+- parse text into words
+- work with this text learning words *figure out how to do it

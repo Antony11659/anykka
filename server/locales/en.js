@@ -27,6 +27,7 @@ export default {
         signIn: "Login",
         signUp: "Register",
         signOut: "Logout",
+        start: "Start",
       },
     },
     views: {

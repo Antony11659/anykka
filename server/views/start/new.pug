@@ -1,0 +1,10 @@
+extends ../layouts/application.pug
+
+block header
+  h1 Prepare Text
+
+block content
+  form(action='/start/new' method='post').form-floating
+    input(id="data_title" type="text" name="title").form-control.w-50.m-2
+    textarea.form-control(id="data[content]" name='content' placeholder='Put your text here...' style='height: 100px')
+    +submit()(value='save')

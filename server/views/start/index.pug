@@ -1,0 +1,15 @@
+extends ../layouts/application.pug
+
+block header
+  h1 Start Learning 
+
+block content
+  table.table
+    thead
+      tr
+        th(scope='col') name
+    tbody
+      each item in texts
+        tr
+          th(scope='row')=item.title
+  a.list-group-item.list-group-item-action(href='/start/new') New Text

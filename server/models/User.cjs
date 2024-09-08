@@ -1,24 +1,26 @@
 // @ts-check
 
-const BaseModel = require('./BaseModel.cjs');
-const objectionUnique = require('objection-unique');
-const encrypt = require('../lib/secure.cjs');
+const BaseModel = require("./BaseModel.cjs");
+const objectionUnique = require("objection-unique");
+const encrypt = require("../lib/secure.cjs");
 
-const unique = objectionUnique({ fields: ['email'] });
+const unique = objectionUnique({ fields: ["email"] });
 
 module.exports = class User extends unique(BaseModel) {
   static get tableName() {
-    return 'users';
+    return "users";
   }
 
   static get jsonSchema() {
     return {
-      type: 'object',
-      required: ['email', 'password'],
+      type: "object",
+      required: ["email", "password"],
       properties: {
-        id: { type: 'integer' },
-        email: { type: 'string', minLength: 1 },
-        password: { type: 'string', minLength: 3 },
+        id: { type: "integer" },
+        name: { type: "string", minLength: 1 },
+        phoneNumber: { type: "string" },
+        email: { type: "string", minLength: 1 },
+        password: { type: "string", minLength: 3 },
       },
     };
   }
@@ -30,4 +32,4 @@ module.exports = class User extends unique(BaseModel) {
   verifyPassword(password) {
     return encrypt(password) === this.passwordDigest;
   }
-}
+};
